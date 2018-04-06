@@ -65,4 +65,42 @@ def contains_sequence(dna1, dna2):
         return True
     else:
         return False
-            
+
+
+def is_valid_sequence(dna):
+
+    ''' (str) -> bool
+
+    Return True if and only if the DNA sequence is
+    valid (that is, it contains no characers other
+    than 'A', 'T', 'C', and 'G').
+    
+    >>> is_valid_sequence('ATCGGC')
+    True
+    >>> is_valid_sequence('ANMEWGT')
+    False
+    '''
+    
+    for char in dna:
+        if char not in 'ATCG':
+            return False
+        
+    return True
+
+def insert_sequence(dna1, dna2, index):
+    
+    ''' (str, str, int) -> str
+
+    Return the DNA sequence obtained by inserting dna2
+    into the dna1 at index.
+
+    >>> insert_sequence('ACTGCAT', 'CC', 2)
+    ACCCTGCAT
+    >>> insert_sequence('GTACTAGCATA', 'TTTTTAACCC', -5)
+    GTACTATTTTTAACCCGCATA
+    '''
+
+    dna3 = dna1[:index] + dna2 + dna1[index:]
+
+    return dna3
+    
