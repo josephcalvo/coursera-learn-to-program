@@ -104,3 +104,47 @@ def insert_sequence(dna1, dna2, index):
 
     return dna3
     
+
+def get_complement(nucleotide):
+
+    ''' (str) -> str
+
+    Return the nucleotide's compliment.
+    
+    >>> get_complement('A')
+    T
+    >>> get_complement('C')
+    G
+    '''
+    
+    if nucleotide in 'A':
+        nucleotide = 'T'
+    elif nucleotide in 'T':
+        nucleotide = 'A'
+    elif nucleotide in 'C':
+        nucleotide = 'G'
+    elif nucleotide in 'G':
+        nucleotide = 'C'
+
+    return nucleotide
+
+
+def get_complement_sequence(dna):
+
+    ''' (str) -> str
+
+    Return the DNA sequence that is complimentary
+    to dna.
+    
+    >>> get_complement_sequence('ATGC')
+    TACG
+    >>> get_complement_sequence('CCGGTTAA')
+    GGCCAATT
+    '''
+
+    complement_dna = ''
+    
+    for char in dna:
+        complement_dna = complement_dna + get_complement(char)
+
+    return complement_dna
