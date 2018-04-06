@@ -61,3 +61,8 @@ def contains_sequence(dna1, dna2):
     False
 
     """
+    if dna2 in dna1:
+        return True
+    else:
+        return False
+            
