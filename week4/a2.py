@@ -95,9 +95,9 @@ def insert_sequence(dna1, dna2, index):
     into the dna1 at index.
 
     >>> insert_sequence('ACTGCAT', 'CC', 2)
-    ACCCTGCAT
+    'ACCCTGCAT'
     >>> insert_sequence('GTACTAGCATA', 'TTTTTAACCC', -5)
-    GTACTATTTTTAACCCGCATA
+    'GTACTATTTTTAACCCGCATA'
     '''
 
     dna3 = dna1[:index] + dna2 + dna1[index:]
@@ -112,9 +112,9 @@ def get_complement(nucleotide):
     Return the nucleotide's compliment.
     
     >>> get_complement('A')
-    T
+    'T'
     >>> get_complement('C')
-    G
+    'G'
     '''
     
     if nucleotide in 'A':
@@ -129,17 +129,17 @@ def get_complement(nucleotide):
     return nucleotide
 
 
-def get_complement_sequence(dna):
+def get_complementary_sequence(dna):
 
     ''' (str) -> str
 
     Return the DNA sequence that is complimentary
     to dna.
     
-    >>> get_complement_sequence('ATGC')
-    TACG
-    >>> get_complement_sequence('CCGGTTAA')
-    GGCCAATT
+    >>> get_complementary_sequence('ATGC')
+    'TACG'
+    >>> get_complementary_sequence('CCGGTTAA')
+    'GGCCAATT'
     '''
 
     complement_dna = ''
